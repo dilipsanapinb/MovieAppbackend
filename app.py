@@ -7,8 +7,9 @@ import bcrypt
 from datetime import timedelta
 import jwt
 from  functools import wraps
-app=Flask(__name__)
 
+app=Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql://root:Dilip@0123@localhost:3306/BookSpotOn'
 
 app.config['MYSQL_HOST']='localhost'
 app.config['MYSQL_PORT'] = 3306
