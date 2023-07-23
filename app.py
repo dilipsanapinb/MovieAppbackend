@@ -9,7 +9,7 @@ import jwt
 from  functools import wraps
 app=Flask(__name__)
 
-
+port = int(os.environ.get("RENDER", 5000))
 
 app.config['MYSQL_HOST']='localhost'
 app.config['MYSQL_PORT'] = 3306
@@ -967,7 +967,6 @@ def delete_review(review_id):
         return 'Internal Server Error', 500
 
 if __name__== '__main__':
-    app.run()
-    app.debug(True)
+    app.run(host="0.0.0.0", port=port)
     
 
